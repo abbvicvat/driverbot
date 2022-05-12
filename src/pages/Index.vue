@@ -1,5 +1,6 @@
 <template>
   <q-page class="bg-grey-3">
+    <!--
     <div class="q-pa-md">
       <div style="width: 100%">
         <q-chat-message
@@ -25,6 +26,7 @@
       />
       <q-btn @click="publish" icon="send" color="primary"></q-btn>
     </div>
+    -->
   </q-page>
 </template>
 

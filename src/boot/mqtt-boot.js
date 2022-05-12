@@ -1,7 +1,7 @@
 import * as mqtt from "mqtt"; // import everything inside the mqtt module and give it the namespace "mqtt"
 const options = {
   port: 1884,
-  clientId: "jeton",
+  clientId: "vicvat",
   clean: false,
 };
 
