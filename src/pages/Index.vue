@@ -95,7 +95,7 @@ export default {
         this.turn -= 1;
       }
 
-      if(send) this.log_list.push(message);
+      if(send) this.log_list.push(message), ++this.list_len;
     }
 
     document.onkeyup = (event) => {
@@ -107,7 +107,6 @@ export default {
 
         message = "release W"
         this.speed -= 1;
-        console.log(this.speed);
       }
 
       if(key==='a') {
@@ -137,7 +136,7 @@ export default {
         this.turn += 1;
       }
       
-      if(send) this.log_list.push(message);
+      if(send) this.log_list.push(message), ++this.list_len;
     }
   },
 
@@ -150,6 +149,7 @@ export default {
       right: 0,
       speed: 0,
       turn: 0,
+      list_len: 0,
     };
   },
 
@@ -162,6 +162,7 @@ export default {
       if(speed === 1)  message += "FORWARD";
 
       this.log_list.push(message);
+      ++this.list_len;
     },
 
     turn: function(turn) {
@@ -171,8 +172,21 @@ export default {
       if(turn === 1)  message += "RIGHT";
 
       this.log_list.push(message);
+      ++this.list_len;
+    },
+
+    list_len: function(list_len) {
+      setTimeout(this.updateScroll, 1);
     }
-  }
+  },
+
+  methods: {
+    updateScroll() {
+      let element = document.getElementById("logdiv");
+      element.scrollTop = element.scrollHeight;
+      console.log(element.scrollHeight);
+    }
+  },
 };
 </script>
 
