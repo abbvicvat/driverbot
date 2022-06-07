@@ -167,9 +167,9 @@ export default {
 
     turn: function(turn) {
       let message = "TURNING ";
-      if(turn === -1)  message += "LEFT";
+      if(turn === -1)  message += "RIGHT";
       if(turn === 0)  message = "NOT TURNING";
-      if(turn === 1)  message += "RIGHT";
+      if(turn === 1)  message += "LEFT";
 
       this.log_list.push(message);
       ++this.list_len;
